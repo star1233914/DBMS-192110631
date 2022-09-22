@@ -1,0 +1,17 @@
+mysql> create table empolyee(Emp_Id int(2),Emp_name char(20),Emp_salary int(10),Emp_address char(20));
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> desc empolyee;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| Emp_Id      | int(2)   | YES  |     | NULL    |       |
+| Emp_name    | char(20) | YES  |     | NULL    |       |
+| Emp_salary  | int(10)  | YES  |     | NULL    |       |
+| Emp_address | char(20) | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+mysql> insert into empolyee values(1,'Ramesh',50000,'shabad');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert in…
