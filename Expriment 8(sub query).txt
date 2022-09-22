@@ -1,0 +1,27 @@
+mysql> select * from students;
++--------+----------+---------+------------+-----------+
+| std_id | std_name | std_age | std_gender | std_marks |
++--------+----------+---------+------------+-----------+
+|    191 | sridhar  |      20 | m          |        99 |
+|    193 | praneeth |      20 | m          |        97 |
+|    283 | sindhu   |      21 | f          |        87 |
+|    324 | sonu     |      21 | f          |        74 |
+|    635 | kiran    |      19 | m          |        64 |
++--------+----------+---------+------------+-----------+
+5 rows in set (0.00 sec)mysql> select*from students where std_marks>(select avg(std_marks)from students);
++--------+----------+---------+------------+-----------+
+| std_id | std_name | std_age | std_gender | std_marks |
++--------+----------+---------+------------+-----------+
+|    191 | sridhar  |      20 | m          |        99 |
+|    193 | praneeth |      20 | m          |        97 |
+|    283 | sindhu   |      21 | f          |        87 |
++--------+----------+---------+------------+-----------+
+3 rows in set (0.09 sec)mysql> select std_name,std_marks from students where std_marks>(select avg(std_marks)from students);
++----------+-----------+
+| std_name | std_marks |
++----------+-----------+
+| sridhar  |        99 |
+| praneeth |        97 |
+| sindhu   |        87 |
++----------+-----------+
+3 rows in set (0.00 sec)
