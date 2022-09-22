@@ -1,0 +1,18 @@
+mysql> select * from person;
++----------+-----------+-----------+------+
+| personId | lastName  | FirstName | Age  |
++----------+-----------+-----------+------+
+|        1 | Hansen    | Ola       |   30 |
+|        2 | Svendson  | Tove      |   23 |
+|        3 | Pettersen | Kari      |   20 |
++----------+-----------+-----------+------+
+3 rows in set (0.00 sec)
+
+mysql> select FirstName from person where Age between 10 and 25;
++-----------+
+| FirstName |
++-----------+
+| Tove      |
+| Kari      |
++-----------+
+2 rows in set (0.06 sec)s
