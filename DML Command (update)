@@ -1,0 +1,25 @@
++--------+----------+------------+-------------+
+| Emp_Id | Emp_name | Emp_salary | Emp_address |
++--------+----------+------------+-------------+
+|      1 | Ramesh   |      50000 | shabad      |
+|      2 | Suresh   |      60000 | chevella    |
+|      3 | Ganesh   |      70000 | Hyderabad   |
+|      4 | Praneeth |      80000 | Vikarabad   |
++--------+----------+------------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> update empolyee set Emp_name='sridhar',Emp_salary=100000
+    -> where Emp_Id=1;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from empolyee;
++--------+----------+------------+-------------+
+| Emp_Id | Emp_name | Emp_salary | Emp_address |
++--------+----------+------------+-------------+
+|      1 | sridhar  |     100000 | shabad      |
+|      2 | Suresh   |      60000 | chevella    |
+|      3 | Ganesh   |      70000 | Hyderabad   |
+|      4 | Praneeth |      80000 | Vikarabad   |
++--------+----------+------------+-------------+
+4 rows in set (0.00 sec)
