@@ -1,0 +1,32 @@
+mysql> select * from person;
++----------+----------+-----------+------+--------+
+| personId | lastName | FirstName | Age  | mob_no |
++----------+----------+-----------+------+--------+
+|      121 | reddy    | aravind   |   18 |  99499 |
+|      256 | kiran    | uday      |   21 |  81794 |
+|      695 | kumar    | praneeth  |   19 |  99894 |
+|      283 | reddy    | sridhar   |   20 |  76010 |
++----------+----------+-----------+------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select personId,count(personId) from person group by personId;
++----------+-----------------+
+| personId | count(personId) |
++----------+-----------------+
+|      121 |               1 |
+|      256 |               1 |
+|      283 |               1 |
+|      695 |               1 |
++----------+-----------------+
+4 rows in set (0.07 sec)
+
+mysql> select lastName,FirstName from person order by personId;
++----------+-----------+
+| lastName | FirstName |
++----------+-----------+
+| reddy    | aravind   |
+| kiran    | uday      |
+| reddy    | sridhar   |
+| kumar    | praneeth  |
++----------+-----------+
+4 rows in set (0.00 sec)
