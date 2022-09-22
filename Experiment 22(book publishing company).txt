@@ -1,0 +1,90 @@
+mysql> desc book_details;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| book_id     | int(10)     | YES  |     | NULL    |       |
+| book_name   | varchar(20) | YES  |     | NULL    |       |
+| book_author | varchar(20) | YES  |     | NULL    |       |
+| book_price  | int(20)     | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+mysql> insert into book_details values(123,'Times of India','APJ Abdul Kalam',500);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into book_details values(146,'Vikram','Lokesh kanagaraju',200);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into book_details values(283,'Bahubali','Rajamouli',700);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> select * from book_details;
++---------+----------------+-------------------+------------+
+| book_id | book_name      | book_author       | book_price |
++---------+----------------+-------------------+------------+
+|     123 | Times of India | APJ Abdul Kalam   |        500 |
+|     146 | Vikram         | Lokesh kanagaraju |        200 |
+|     283 | Bahubali       | Rajamouli         |        700 |
++---------+----------------+-------------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> update book_details set book_author='Bhardwaj' where book_price=200;
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from book_details;
++---------+----------------+-----------------+------------+
+| book_id | book_name      | book_author     | book_price |
++---------+----------------+-----------------+------------+
+|     123 | Times of India | APJ Abdul Kalam |        500 |
+|     146 | Vikram         | Bhardwaj        |        200 |
+|     283 | Bahubali       | Rajamouli       |        700 |
++---------+----------------+-----------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> delete from book_details where book_price=200;
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from book_details;
++---------+----------------+-----------------+------------+
+| book_id | book_name      | book_author     | book_price |
++---------+----------------+-----------------+------------+
+|     123 | Times of India | APJ Abdul Kalam |        500 |
+|     283 | Bahubali       | Rajamouli       |        700 |
++---------+----------------+-----------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> create table author(a_name varchar(20),a_book varchar(20),a_gender varchar(20),a_age int(20));
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> desc author;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| a_name   | varchar(20) | YES  |     | NULL    |       |
+| a_book   | varchar(20) | YES  |     | NULL    |       |
+| a_gender | varchar(20) | YES  |     | NULL    |       |
+| a_age    | int(20)     | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> insert into author values('Abdul','Times of india','male',91),('sindhu','World','female',45);
+Query OK, 2 rows affected (0.03 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from author;
++--------+----------------+----------+-------+
+| a_name | a_book         | a_gender | a_age |
++--------+----------------+----------+-------+
+| Abdul  | Times of india | male     |    91 |
+| sindhu | World          | female   |    45 |
++--------+----------------+----------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select a_name,a_gender from author order by a_age;
++--------+----------+
+| a_name | a_gender |
++--------+----------+
+| sindhu | female   |
+| Abdul  | male     |
++--------+----------+
+2 rows in set (0.02 sec)
