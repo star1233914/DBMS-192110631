@@ -1,0 +1,22 @@
++--------+----------+------------+-------------+
+| Emp_Id | Emp_name | Emp_salary | Emp_address |
++--------+----------+------------+-------------+
+|      1 | sridhar  |     100000 | shabad      |
+|      2 | Suresh   |      60000 | chevella    |
+|      3 | Ganesh   |      70000 | Hyderabad   |
+|      4 | Praneeth |      80000 | Vikarabad   |
++--------+----------+------------+-------------+
+4 rows in set (0.00 sec)
+mysql> delete from empolyee
+    -> where Emp_name='Suresh';
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from empolyee;
++--------+----------+------------+-------------+
+| Emp_Id | Emp_name | Emp_salary | Emp_address |
++--------+----------+------------+-------------+
+|      1 | sridhar  |     100000 | shabad      |
+|      3 | Ganesh   |      70000 | Hyderabad   |
+|      4 | Praneeth |      80000 | Vikarabad   |
++--------+----------+------------+-------------+
+3 rows in set (0.00 sec)
