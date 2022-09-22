@@ -1,0 +1,36 @@
+mysql> select * from marks;
++-------+----------+---------+-------+-------+
+| sl_no | name     | subject | marks | grade |
++-------+----------+---------+-------+-------+
+|     1 | sridhar  | dbms    |    99 | A     |
+|     1 | praneeth | python  |    92 | A     |
+|     2 | aravind  | java    |    74 | B     |
+|     3 | uday     | AI      |    85 | B     |
++-------+----------+---------+-------+-------+
+4 rows in set (0.01 sec)
+
+mysql> create view marks_view as select subject,grade and marks from marks;
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> select * from marks_view;
++---------+-----------------+
+| subject | grade and marks |
++---------+-----------------+
+| dbms    |               0 |
+| python  |               0 |
+| java    |               0 |
+| AI      |               0 |
++---------+-----------------+
+4 rows in set, 4 warnings (0.04 sec)
+
+mysql> create index subject on marks(subject);
+Query OK, 0 rows affected (0.22 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> show index from marks;
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| marks |          1 | subject  |            1 | subject     | A         |           4 |     NULL | NULL   | YES  | BTREE      |         |               |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+1 row in set (0.05 sec)
