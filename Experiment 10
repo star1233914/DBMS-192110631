@@ -1,0 +1,60 @@
+mysql> create database marks1;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use marks1;
+Database changed
+mysql> create table marks1(slno int(10),name char(10),subject char(10),marks int(10),grade char(2));
+Query OK, 0 rows affected (0.20 sec)
+
+mysql> desc marks1;
++---------+----------+------+-----+---------+-------+
+| Field   | Type     | Null | Key | Default | Extra |
++---------+----------+------+-----+---------+-------+
+| slno    | int(10)  | YES  |     | NULL    |       |
+| name    | char(10) | YES  |     | NULL    |       |
+| subject | char(10) | YES  |     | NULL    |       |
+| marks   | int(10)  | YES  |     | NULL    |       |
+| grade   | char(2)  | YES  |     | NULL    |       |
++---------+----------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> insert into marks1 values(1,'prabha','python',95,'A'),(2,'munna','java',90,'B'),(3,'raju','pdsd',80,'B'),(4,'chinna','dbms',79,'C');
+Query OK, 4 rows affected (0.14 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from marks1;
++------+--------+---------+-------+-------+
+| slno | name   | subject | marks | grade |
++------+--------+---------+-------+-------+
+|    1 | prabha | python  |    95 | A     |
+|    2 | munna  | java    |    90 | B     |
+|    3 | raju   | pdsd    |    80 | B     |
+|    4 | chinna | dbms    |    79 | C     |
++------+--------+---------+-------+-------+
+4 rows in set (0.00 sec)
+
+mysql> create view marks_view as select subject, Marks and grade from marks1;
+Query OK, 0 rows affected (0.20 sec)
+
+mysql> select * from marks_view;
++---------+-----------------+
+| subject | Marks and grade |
++---------+-----------------+
+| python  |               0 |
+| java    |               0 |
+| pdsd    |               0 |
+| dbms    |               0 |
++---------+-----------------+
+4 rows in set, 4 warnings (0.16 sec)
+
+mysql> create index subject on marks1(subject);
+Query OK, 0 rows affected (0.25 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> show index from marks1;
++--------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table  | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++--------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| marks1 |          1 | subject  |            1 | subject     | A         |           4 |     NULL | NULL   | YES  | BTREE      |         |               |
++--------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+1 row in set (0.11 sec)
