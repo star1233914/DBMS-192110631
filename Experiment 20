@@ -1,0 +1,117 @@
+mysql> desc employeess2;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| FNAME    | char(45) | YES  |     | NULL    |       |
+| LNAME    | char(45) | YES  |     | NULL    |       |
+| SSN      | int(45)  | YES  |     | NULL    |       |
+| BDATE    | date     | YES  |     | NULL    |       |
+| ADDRESS  | char(45) | YES  |     | NULL    |       |
+| SEX      | char(67) | YES  |     | NULL    |       |
+| SALARY   | int(89)  | YES  |     | NULL    |       |
+| SUPERSSN | int(78)  | YES  |     | NULL    |       |
+| DNO      | int(99)  | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+9 rows in set (0.01 sec)
+
+mysql>  insert into employeess2 values ('shaik','afroz',12345678,'01-08-13','andhra','m',340000,45637281,4),('munagapati','bhargav',34562,'02-09-03','goa','f',456000,567890,5),('rayi','sony',345789,'03-07-09','punjab','f',56000,45678,8),('syed','asif',342156,'16-04-19','goa','f',23456,678954,5),('varshi','cherukuru',12345677,'15-04-04','ts','f',15000,340000,23);
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from employeess2;
++------------+-----------+----------+------------+---------+------+--------+----------+------+
+| FNAME      | LNAME     | SSN      | BDATE      | ADDRESS | SEX  | SALARY | SUPERSSN | DNO  |
++------------+-----------+----------+------------+---------+------+--------+----------+------+
+| shaik      | afroz     | 12345678 | 2001-08-13 | andhra  | m    | 340000 | 45637281 |    4 |
+| shaik      | afroz     | 12345678 | 2001-08-13 | andhra  | m    | 340000 | 45637281 |    4 |
+| munagapati | bhargav   |    34562 | 2002-09-03 | goa     | f    | 456000 |   567890 |    5 |
+| rayi       | sony      |   345789 | 2003-07-09 | punjab  | f    |  56000 |    45678 |    8 |
+| syed       | asif      |   342156 | 2016-04-19 | goa     | f    |  23456 |   678954 |    5 |
+| varshi     | cherukuru | 12345677 | 2015-04-04 | ts      | f    |  15000 |   340000 |   23 |
++------------+-----------+----------+------------+---------+------+--------+----------+------+
+6 rows in set (0.00 sec)
+
+mysql> create table department(dname char(10),dnumber int(15),mgrssn int(25),mgrstartdate date);
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> desc department;
++--------------+----------+------+-----+---------+-------+
+| Field        | Type     | Null | Key | Default | Extra |
++--------------+----------+------+-----+---------+-------+
+| dname        | char(10) | YES  |     | NULL    |       |
+| dnumber      | int(15)  | YES  |     | NULL    |       |
+| mgrssn       | int(25)  | YES  |     | NULL    |       |
+| mgrstartdate | date     | YES  |     | NULL    |       |
++--------------+----------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into department values('cse',123,45692,'21-09-22'),('ece',524,8512,'22-10-23'),('eee',789,2365,'23-11-24');
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from department;
++-------+---------+--------+--------------+
+| dname | dnumber | mgrssn | mgrstartdate |
++-------+---------+--------+--------------+
+| cse   |     123 |  45692 | 2021-09-22   |
+| ece   |     524 |   8512 | 2022-10-23   |
+| eee   |     789 |   2365 | 2023-11-24   |
++-------+---------+--------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from employeess2 sum(salary);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sum(salary)' at line 1
+mysql> select sum(salary)as totalsum of salary;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'of salary' at line 1
+mysql> select sum(salary)as totalsum from employeess2;
++----------+
+| totalsum |
++----------+
+|  1230456 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select max(salary) from employeess2;
++-------------+
+| max(salary) |
++-------------+
+|      456000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select min(salary) from employeess2;
++-------------+
+| min(salary) |
++-------------+
+|       15000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(salary) from employeess2;
++-------------+
+| avg(salary) |
++-------------+
+| 205076.0000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> update employeess2 set name='ram' where name='sony';
+ERROR 1054 (42S22): Unknown column 'name' in 'where clause'
+mysql> update employeess2 set name=ram where name='sony';
+ERROR 1054 (42S22): Unknown column 'name' in 'where clause'
+mysql> update employeess2 set FNAME='ram' where DNO=23;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employeess2;
++------------+-----------+----------+------------+---------+------+--------+----------+------+
+| FNAME      | LNAME     | SSN      | BDATE      | ADDRESS | SEX  | SALARY | SUPERSSN | DNO  |
++------------+-----------+----------+------------+---------+------+--------+----------+------+
+| shaik      | afroz     | 12345678 | 2001-08-13 | andhra  | m    | 340000 | 45637281 |    4 |
+| shaik      | afroz     | 12345678 | 2001-08-13 | andhra  | m    | 340000 | 45637281 |    4 |
+| munagapati | bhargav   |    34562 | 2002-09-03 | goa     | f    | 456000 |   567890 |    5 |
+| rayi       | sony      |   345789 | 2003-07-09 | punjab  | f    |  56000 |    45678 |    8 |
+| syed       | asif      |   342156 | 2016-04-19 | goa     | f    |  23456 |   678954 |    5 |
+| ram        | cherukuru | 12345677 | 2015-04-04 | ts      | f    |  15000 |   340000 |   23 |
++------------+-----------+----------+------------+---------+------+--------+----------+------+
+6 rows in set (0.00 sec)
