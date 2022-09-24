@@ -1,0 +1,225 @@
+mysql> desc prabhas1;
++--------+----------+------+-----+---------+-------+
+| Field  | Type     | Null | Key | Default | Extra |
++--------+----------+------+-----+---------+-------+
+| sno    | int(10)  | YES  |     | NULL    |       |
+| name   | char(10) | YES  |     | NULL    |       |
+| branch | char(10) | YES  |     | NULL    |       |
+| age    | int(10)  | YES  |     | NULL    |       |
+| phno   | int(11)  | YES  |     | NULL    |       |
++--------+----------+------+-----+---------+-------+
+5 rows in set (0.03 sec)
+
+mysql> update prabhas1 set age=19 where name='ram';
+Query OK, 1 row affected (0.09 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from prabhas1;
++------+------+--------+------+------+
+| sno  | name | branch | age  | phno |
++------+------+--------+------+------+
+|    1 | ram  | cse    |   19 | NULL |
+|    2 | raju | ece    | NULL | NULL |
++------+------+--------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> update prabhas1 set phno=984830423 where name='ram';
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from prabhas1;
++------+------+--------+------+-----------+
+| sno  | name | branch | age  | phno      |
++------+------+--------+------+-----------+
+|    1 | ram  | cse    |   19 | 984830423 |
+|    2 | raju | ece    | NULL |      NULL |
++------+------+--------+------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> delete from prabhas1 where age;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from prabhas1;
++------+------+--------+------+------+
+| sno  | name | branch | age  | phno |
++------+------+--------+------+------+
+|    2 | raju | ece    | NULL | NULL |
++------+------+--------+------+------+
+1 row in set (0.00 sec)
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+mysql> desc prabhas1;
++--------+----------+------+-----+---------+-------+
+| Field  | Type     | Null | Key | Default | Extra |
++--------+----------+------+-----+---------+-------+
+| sno    | int(10)  | YES  |     | NULL    |       |
+| name   | char(10) | YES  |     | NULL    |       |
+| branch | char(10) | YES  |     | NULL    |       |
+| age    | int(10)  | YES  |     | NULL    |       |
+| phno   | int(11)  | YES  |     | NULL    |       |
++--------+----------+------+-----+---------+-------+
+5 rows in set (0.03 sec)
+
+mysql> update prabhas1 set age=19 where name='ram';
+Query OK, 1 row affected (0.09 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from prabhas1;
++------+------+--------+------+------+
+| sno  | name | branch | age  | phno |
++------+------+--------+------+------+
+|    1 | ram  | cse    |   19 | NULL |
+|    2 | raju | ece    | NULL | NULL |
++------+------+--------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> update prabhas1 set phno=984830423 where name='ram';
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from prabhas1;
++------+------+--------+------+-----------+
+| sno  | name | branch | age  | phno      |
++------+------+--------+------+-----------+
+|    1 | ram  | cse    |   19 | 984830423 |
+|    2 | raju | ece    | NULL |      NULL |
++------+------+--------+------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> delete from prabhas1 where age;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from prabhas1;
++------+------+--------+------+------+
+| sno  | name | branch | age  | phno |
++------+------+--------+------+------+
+|    2 | raju | ece    | NULL | NULL |
++------+------+--------+------+------+
+1 row in set (0.00 sec)
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+mysql> desc prabhas1;
++--------+----------+------+-----+---------+-------+
+| Field  | Type     | Null | Key | Default | Extra |
++--------+----------+------+-----+---------+-------+
+| sno    | int(10)  | YES  |     | NULL    |       |
+| name   | char(10) | YES  |     | NULL    |       |
+| branch | char(10) | YES  |     | NULL    |       |
+| age    | int(10)  | YES  |     | NULL    |       |
+| phno   | int(11)  | YES  |     | NULL    |       |
++--------+----------+------+-----+---------+-------+
+5 rows in set (0.03 sec)
+
+mysql> update prabhas1 set age=19 where name='ram';
+Query OK, 1 row affected (0.09 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from prabhas1;
++------+------+--------+------+------+
+| sno  | name | branch | age  | phno |
++------+------+--------+------+------+
+|    1 | ram  | cse    |   19 | NULL |
+|    2 | raju | ece    | NULL | NULL |
++------+------+--------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> update prabhas1 set phno=984830423 where name='ram';
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from prabhas1;
++------+------+--------+------+-----------+
+| sno  | name | branch | age  | phno      |
++------+------+--------+------+-----------+
+|    1 | ram  | cse    |   19 | 984830423 |
+|    2 | raju | ece    | NULL |      NULL |
++------+------+--------+------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> delete from prabhas1 where age;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from prabhas1;
++------+------+--------+------+------+
+| sno  | name | branch | age  | phno |
++------+------+--------+------+------+
+|    2 | raju | ece    | NULL | NULL |
++------+------+--------+------+------+
+1 row in set (0.00 sec)
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+mysql> desc prabhas1;
++--------+----------+------+-----+---------+-------+
+| Field  | Type     | Null | Key | Default | Extra |
++--------+----------+------+-----+---------+-------+
+| sno    | int(10)  | YES  |     | NULL    |       |
+| name   | char(10) | YES  |     | NULL    |       |
+| branch | char(10) | YES  |     | NULL    |       |
+| age    | int(10)  | YES  |     | NULL    |       |
+| phno   | int(11)  | YES  |     | NULL    |       |
++--------+----------+------+-----+---------+-------+
+5 rows in set (0.03 sec)
+
+mysql> update prabhas1 set age=19 where name='ram';
+Query OK, 1 row affected (0.09 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from prabhas1;
++------+------+--------+------+------+
+| sno  | name | branch | age  | phno |
++------+------+--------+------+------+
+|    1 | ram  | cse    |   19 | NULL |
+|    2 | raju | ece    | NULL | NULL |
++------+------+--------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> update prabhas1 set phno=984830423 where name='ram';
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from prabhas1;
++------+------+--------+------+-----------+
+| sno  | name | branch | age  | phno      |
++------+------+--------+------+-----------+
+|    1 | ram  | cse    |   19 | 984830423 |
+|    2 | raju | ece    | NULL |      NULL |
++------+------+--------+------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> delete from prabhas1 where age;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from prabhas1;
++------+------+--------+------+------+
+| sno  | name | branch | age  | phno |
++------+------+--------+------+------+
+|    2 | raju | ece    | NULL | NULL |
++------+------+--------+------+------+
+1 row in set (0.00 sec)
