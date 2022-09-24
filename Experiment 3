@@ -1,0 +1,47 @@
+mysql> create database prabhas1;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use prabhas1;
+Database changed
+mysql> create table prabhas1(sno int(10),name char(10),branch char(10));
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> desc prabhas1;
++--------+----------+------+-----+---------+-------+
+| Field  | Type     | Null | Key | Default | Extra |
++--------+----------+------+-----+---------+-------+
+| sno    | int(10)  | YES  |     | NULL    |       |
+| name   | char(10) | YES  |     | NULL    |       |
+| branch | char(10) | YES  |     | NULL    |       |
++--------+----------+------+-----+---------+-------+
+3 rows in set (0.03 sec)
+
+mysql> insert into prabhas1 values(1,'ram','cse'),(2,'raju','ece');
+Query OK, 2 rows affected (0.05 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from prabhas1;
++------+------+--------+
+| sno  | name | branch |
++------+------+--------+
+|    1 | ram  | cse    |
+|    2 | raju | ece    |
++------+------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select name from prabhas1;
++------+
+| name |
++------+
+| ram  |
+| raju |
++------+
+2 rows in set (0.00 sec)
+
+mysql> select * from prabhas1 where branch='ece';
++------+------+--------+
+| sno  | name | branch |
++------+------+--------+
+|    2 | raju | ece    |
++------+------+--------+
+1 row in set (0.06 sec)
